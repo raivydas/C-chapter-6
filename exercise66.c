@@ -37,18 +37,12 @@ void ungetch(char c) {
     printf("The buffer is full.\n");
 }
 
-char *getword() {
-  char word[MAXLEN];
-  int currp = 0;
-  char currchar;
-  while ((currchar = getch()) != EOF && isalnum(currchar) && currp < MAXLEN)
-    word[currp++] = currchar;
-  while (!isalnum(currchar = getch()))
-    ;
-  if (isalnum(currchar))
-    ungetch(currchar);
-  word[currp] = '\0';
-  return word;
+//I found the following function on Internet: http://cboard.cprogramming.com/c-programming/169208-getword-function.html. Here I give a slightly modified version.
+
+int getword(char *word, int lim) {
+  char *w = word;
+  int c;
+
 }
 
 int main(int argc, char const *argv[]) {
